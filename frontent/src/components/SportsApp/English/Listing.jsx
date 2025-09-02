@@ -2,15 +2,15 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { Link } from 'react-router-dom';
 import { Filtering } from "./Filtering";
-import { Headerml } from "./Header";
-export const Listingml = () => {
+import { Header } from "./Header";
+export const Listing = () => {
 const [list, setList] = useState([]);
 const [search, setSearch] = useState('');
 const [orderCH, setOrderCH] = useState('');
 const [datecontrol, setDatecontrol] = useState('');
-
+const serverUrl = import.meta.env.VITE_SERVER_URL;
 useEffect(()=>{
-  axios.get('http://localhost:8081/')
+  axios.get(`${serverUrl}/`)
   .then(res=>setList(res.data))
   .catch(err => console.log(err))
 },[])
@@ -18,13 +18,14 @@ useEffect(()=>{
 const searchHandler = (e) =>{
   setSearch(e.target.value)
 }
+
 const changeOrder = (e) => {
   setOrderCH(e.target.value);
 }
 const datePicker = (e) =>{
   setDatecontrol(e.target.value)
 }
-let filteredList = list.filter(item => item.FirstName.toLowerCase().includes(search.toLowerCase()) && (datecontrol === '' || item.DOB === datecontrol.split("-").reverse().join("-")));
+let filteredList = list?.filter(item => item.FirstName.toLowerCase().includes(search.toLowerCase()) && (datecontrol === '' || item.DOB === datecontrol.split("-").reverse().join("-")));
 
 if(orderCH === 'Descending'){
   filteredList.sort((a,b)=>b.FirstName.localeCompare(a.FirstName))
@@ -40,7 +41,7 @@ if(orderCH === 'Descending'){
 const deletHandler = async (id) => {
   console.log(id)
   try {
-  await axios.delete('http://localhost:8081/users/' + id)
+  await axios.delete(`${serverUrl}/users/` + id)
     .then(() => {
       setList(prevList => prevList.filter(item => item.ID !== id));
     })
@@ -54,7 +55,7 @@ const deletHandler = async (id) => {
 
   return (
     <>
-    <Headerml />
+    <Header />
     <Filtering dateVal={datecontrol} searchVal={search} orderChange={changeOrder} calendarPicker={datePicker} searchfromList={searchHandler} />
 
     <div className="container mt-5">
@@ -66,21 +67,21 @@ const deletHandler = async (id) => {
           {list.FirstName}
         </div>
         <div className="col-8 col-md-4 text-end">
-          <Link to={`/userslistml/${list.ID}`} className="btn btn-primary me-2 ml-normal">ImWpI</Link>
+          <Link to={`/userslist/${list.ID}`} className="btn btn-primary me-2">View</Link>
 
           {/* <button className="btn btn-danger" onClick={()=>deletHandler(list.ID)}>Delete</button> */}
           {/* <button className="btn btn-danger" onClick={deletHandler}>Delete</button> */}
 
           {/* <Errorpopup errorTrigger={()=>deletHandler(list.ID)} /> */}
-          <button className="btn btn-danger ml-normal" data-bs-toggle="modal" data-bs-target={`#statusErrorsModal${list.ID}`}>IfbpI</button>
+          <button className="btn btn-danger" data-bs-toggle="modal" data-bs-target={`#statusErrorsModal${list.ID}`}>Delete</button>
 		<div className="modal fade" id={`statusErrorsModal${list.ID}`} role="dialog" data-bs-backdrop="static" data-bs-keyboard="false"> 
 			<div className="modal-dialog modal-dialog-centered modal-sm" role="document"> 
 				<div className="modal-content"> 
 					<div className="modal-body text-center p-lg-4"> 
                     <i className="bi bi-x-circle text-danger fs-lg"></i>
-						<h4 className="text-danger mt-3"><span className="ml-normal">Dd¸mtWm?</span> {list.FirstName}</h4> 
-						<button type="button" className="btn btn-sm mt-3 btn-danger ml-normal" onClick={()=>deletHandler(list.ID)} data-bs-dismiss="modal">IfbpI</button>
-                        <button type="button" className="btn btn-sm mt-3 btn-secondary ms-2 ml-normal" data-bs-dismiss="modal">CÃ­</button> 
+						<h4 className="text-danger mt-3">Are sure? {list.FirstName}</h4> 
+						<button type="button" className="btn btn-sm mt-3 btn-danger" onClick={()=>deletHandler(list.ID)} data-bs-dismiss="modal">Delete</button>
+                        <button type="button" className="btn btn-sm mt-3 btn-secondary ms-2" data-bs-dismiss="modal">Cancel</button> 
 					</div> 
 				</div> 
 			</div> 

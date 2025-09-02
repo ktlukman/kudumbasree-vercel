@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Header } from "./Header"
+import { Headerml } from "./Header"
 import axios from "axios"
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import plogo from '../../../assets/img/sports/logo.svg';
-export const Viewdetails = () => {
+export const Viewdetailsml = () => {
     const {id} = useParams();
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
@@ -17,8 +17,9 @@ export const Viewdetails = () => {
     const [attendence, setattendence] = useState('');
     const [status, setStatus] = useState('');
     const navgateto = useNavigate();
+    const serverUrl = import.meta.env.VITE_SERVER_URL;
 useEffect(()=>{
-    axios.get('http://localhost:8081/lister/'+id)
+    axios.get(`${serverUrl}/lister/`+id)
             .then(res => {
                 const studentData = res.data;
                 console.log(id, studentData.ID);
@@ -43,10 +44,12 @@ useEffect(()=>{
             })
             .catch(err => console.log(err));
 },[id]);
-
+const addressdata = "IpSpw_{io kwKaw, Hcp tIcf kÀ¡mÀ Øm]\w , XncpthK¸pd";
+  const kdbdet = "IpSpw_{io se hnhc§Ä";
   return (
     <>
-    <Header />
+    <Headerml />
+
 
 
 <div className="container emp-profile">
@@ -67,16 +70,16 @@ useEffect(()=>{
                                     <h6>
                                         {mobile}
                                     </h6>
-                                    <p className="proile-rating">DateOfBirth : <span>{dateofbirth.split("-").reverse().join("-")}</span></p>
+                                    <p className="proile-rating"><span className="ml-normal">P\\ Xn¿Xn :</span> <span>{dateofbirth.split("-").reverse().join("-")}</span></p>
                             <ul className="nav nav-tabs" id="myTab" role="tablist">
                                 <li className="nav-item">
-                                    <a className="nav-link active">About</a>
+                                    <a className="nav-link active ml-normal">shàn hnhc§Ä</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-md-2">
-                        <Link to={`/userslist/edit/${id}`} className='profile-edit-btn'>Edit Profile</Link>
+                        <Link to={`/userslistml/edit/${id}`} className='profile-edit-btn ml-normal'>hnhc§Ä amämw</Link>
                     </div>
                 </div>
                 <div className="row">
@@ -85,62 +88,62 @@ useEffect(()=>{
                         <div className="tab-content profile-tab" id="myTabContent">
                             <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>User Id</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>\n§fpsS sFUn</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{id}</p>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Name</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>t]cv</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{firstname} {lastname}</p>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Email</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>CusabnÂ</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>Nil</p>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Phone</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>samss_Â</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{mobile}</p>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Profession</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>tPmen</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{proffession}</p>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Address</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>hnemkw</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{address}</p>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-12">
-                                                <h6><b>Kudumbasree Details</b></h6>
+                                            <div className="col-md-12 ml-normal">
+                                                <h6><b>{kdbdet}</b></h6>
                                             </div>
                                         </div>
 
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Date of Join</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>tNÀ¶ Znhkw</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{dateofjoin.split("-").reverse().join("-")}</p>
@@ -148,32 +151,32 @@ useEffect(()=>{
                                         </div>
 
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Position</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>Øm\w</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{position}</p>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Weekly Fee</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>BgvN hcnkwJy</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{weeklyfee}</p>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Attendence</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>lmPcmb Znhkw</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{attendence}</p>
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-md-6">
-                                                <label>Status</label>
+                                            <div className="col-md-6 ml-normal">
+                                                <label>Ct¸mgs¯ \ne</label>
                                             </div>
                                             <div className="col-md-6">
                                                 <p>{status}</p>

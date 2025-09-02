@@ -12,7 +12,7 @@ import { Viewdetailsml } from './SportsApp/Malayalam/Viewdetails';
 import { Editdetails } from './SportsApp/English/Editdetails';
 import { Editdetailsml } from './SportsApp/Malayalam/Editdetails';
 
-export const Router = () => {
+export const Router = () => { 
   return (
     <>
     <Routes>

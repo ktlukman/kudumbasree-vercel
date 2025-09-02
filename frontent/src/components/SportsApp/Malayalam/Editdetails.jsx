@@ -17,8 +17,9 @@ export const Editdetailsml = () => {
     const [attendence, setattendence] = useState('');
     const [status, setStatus] = useState('');
     const navgateto = useNavigate();
+    const serverUrl = import.meta.env.VITE_SERVER_URL;
 useEffect(()=>{
-    axios.get('http://localhost:8081/lister/'+id)
+    axios.get(`${serverUrl}/lister/`+id)
             .then(res => {
                 const studentData = res.data;
                 console.log(id, studentData.ID);
@@ -47,7 +48,7 @@ useEffect(()=>{
 const submitHandler = (e) =>{
     e.preventDefault();
 
-    axios.put('http://localhost:8081/update/'+id, {
+    axios.put(`${serverUrl}/update/`+id, {
       firstname,
       lastname,
       mobile,
