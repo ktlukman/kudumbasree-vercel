@@ -9,7 +9,10 @@ app.use(cors());
 app.use(fileUpload());
 
 // Connect to SQLite DB
-const db = new Database("./users.sqlite", { verbose: console.log });
+//const db = new Database("./users.sqlite", { verbose: console.log });
+
+const db = new Database("libsql://kudumbasree-vercel-icfg-a3h790hpuuivixz0rg1mr6lp.aws-us-east-1.turso.io", { verbose: console.log });
+
 
 // GET all users
 app.get("/", (req, res) => {
@@ -104,6 +107,6 @@ app.get("/lister/:id", (req, res) => {
   }
 });
 
-/* app.listen(8081, () => {
+app.listen(8081, () => {
   console.log("Server running on http://localhost:8081");
-}); */
+});
