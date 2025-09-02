@@ -1,0 +1,21 @@
+10:20:10:967 [WARN]	Request Failed. ErrorCode: 112029 errorMessage: Platform Status, Send Request Failed. WinHTTP Cannot Connect. last error code = 12029 
+10:20:10:980 [WARN]	Request Failed. ErrorCode: 112029 errorMessage: Platform Status, Send Request Failed. WinHTTP Cannot Connect. last error code = 12029 
+10:20:10:996 [WARN]	SSL certificate signed by unknown CA
+10:20:10:996 [WARN]	SSL certificate signed by unknown CA
+10:20:10:996 [WARN]	Request Failed. ErrorCode: 112175 errorMessage: Platform Status, INVALID_CA. Send Request Failed. WinHTTP Secure Failure. last error code = 12175 
+10:20:10:997 [WARN]	Request Failed. ErrorCode: 112175 errorMessage: Platform Status, INVALID_CA. Send Request Failed. WinHTTP Secure Failure. last error code = 12175 
+10:20:11:005 [WARN]	SSL certificate signed by unknown CA
+10:20:11:006 [WARN]	SSL certificate signed by unknown CA
+10:20:11:006 [WARN]	Request Failed. ErrorCode: 112175 errorMessage: Platform Status, INVALID_CA. Send Request Failed. WinHTTP Secure Failure. last error code = 12175 
+10:20:11:006 [WARN]	Request Failed. ErrorCode: 112175 errorMessage: Platform Status, INVALID_CA. Send Request Failed. WinHTTP Secure Failure. last error code = 12175 
+10:20:11:015 [WARN]	SSL certificate signed by unknown CA
+10:20:11:015 [WARN]	SSL certificate signed by unknown CA
+10:20:11:016 [WARN]	Request Failed. ErrorCode: 112175 errorMessage: Platform Status, INVALID_CA. Send Request Failed. WinHTTP Secure Failure. last error code = 12175 
+10:20:11:016 [WARN]	Request Failed. ErrorCode: 112175 errorMessage: Platform Status, INVALID_CA. Send Request Failed. WinHTTP Secure Failure. last error code = 12175 
+10:20:11:024 [WARN]	SSL certificate signed by unknown CA
+10:20:11:024 [WARN]	Request Failed. ErrorCode: 112175 errorMessage: Platform Status, INVALID_CA. Send Request Failed. WinHTTP Secure Failure. last error code = 12175 
+10:20:11:024 [WARN]	SSL certificate signed by unknown CA
+10:20:11:024 [WARN]	Request Failed. ErrorCode: 112175 errorMessage: Platform Status, INVALID_CA. Send Request Failed. WinHTTP Secure Failure. last error code = 12175 
+10:20:11:031 [WARN]	SSL certificate signed by unknown CA
+10:20:11:031 [WARN]	Request Failed. ErrorCode: 112175 errorMessage: Platform Status, INVALID_CA. Send Request Failed. WinHTTP Secure Failure. last error code = 12175 
+10:23:36:514 [WARN]	Request Failed. ErrorCode: 112029 errorMessage: Platform Status, Send Request Failed. WinHTTP Cannot Connect. last error code = 12029 
